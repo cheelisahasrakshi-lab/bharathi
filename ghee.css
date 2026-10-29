@@ -209,17 +209,21 @@ input {
 ========================= */
 
 @media screen and (max-width: 760px) {
-
-    .header {
-        width: 100%;
-        min-height: 68px;
-        padding: 8px 10px;
-        display: grid;
-        grid-template-columns: 40px minmax(0, 1fr) 78px;
+    .categories.open {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
         align-items: center;
-        column-gap: 4px;
-        row-gap: 0;
+        gap: 22px;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        padding: 14px 8px;
     }
+
+   
 
     /* Menu left */
 
@@ -299,11 +303,10 @@ input {
         align-items: center;
     }
 
-    .categories a {
+ .categories.open a {
         display: inline-flex !important;
         flex: 0 0 auto !important;
         white-space: nowrap;
-        font-size: 14px;
     }
 
     /* Search on mobile */
