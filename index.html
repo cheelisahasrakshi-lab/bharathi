@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharathi Dairy</title>
+    <link rel="stylesheet" href="ghee.css">
+</head>
+<body>
+
+<header class="header">
+
+    <!-- Mobile menu -->
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+    <!-- Logo -->
+    <a href="ghee.html" class="logo">
+        <img src="ghee.jpeg" alt="Bharathi Dairy">
+    </a>
+
+    <!-- Categories -->
+    <nav class="categories" id="categories">
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#ghee">Ghee</a>
+        <a href="#honey">Honey</a>
+        <a href="#combos">Combos</a>
+        <a href="#gifting">Gifting</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <!-- Search and Cart -->
+    <div class="header-actions">
+
+        <button class="icon-btn" id="searchBtn" aria-label="Search">
+            <svg viewBox="0 0 24 24">
+                <circle cx="10.8" cy="10.8" r="6.8"></circle>
+                <path d="m16 16 5 5"></path>
+            </svg>
+        </button>
+
+        <a href="cart.html" class="icon-btn" aria-label="Cart">
+            <svg viewBox="0 0 24 24">
+                <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 1.9-1.5L22 8H6"></path>
+                <circle cx="10" cy="20" r="1"></circle>
+                <circle cx="18" cy="20" r="1"></circle>
+            </svg>
+        </a>
+
+    </div>
+</header>
+
+<!-- Search bar -->
+<div class="search-panel" id="searchPanel">
+    <input type="search" id="searchInput"
+           placeholder="Search products...">
+    <div id="searchResults"></div>
+</div>
+
+<script src="ghee.js"></script>
+</body>
+</html>
