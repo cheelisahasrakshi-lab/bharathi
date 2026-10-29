@@ -1,12 +1,39 @@
 
+/* =========================
+   GENERAL
+========================= */
+
 * {
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #29251d;
+    background: #ffffff;
 }
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+/* =========================
+   HEADER - LAPTOP
+========================= */
 
 .header {
     width: 100%;
@@ -16,13 +43,19 @@ body {
     grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
     gap: 22px;
-    background: #fff;
+    background: #ffffff;
     border-bottom: 1px solid #eee5d5;
+    position: relative;
+    z-index: 10;
 }
+
+/* LOGO */
 
 .logo {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    min-width: 0;
 }
 
 .logo img {
@@ -30,18 +63,15 @@ body {
     width: 145px;
     max-width: 100%;
     height: auto;
+    object-fit: contain;
 }
 
-.menu-btn {
-    display: none;
-    border: none;
-    background: transparent;
-    font-size: 25px;
-    cursor: pointer;
-}
+/* CATEGORIES */
 
 .categories {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: flex-end;
     align-items: center;
     gap: clamp(10px, 1.5vw, 22px);
@@ -49,32 +79,60 @@ body {
 }
 
 .categories a {
-    text-decoration: none;
-    color: #29251d;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
     white-space: nowrap;
     font-size: clamp(12px, 0.9vw, 15px);
+    color: #29251d;
+    transition: color 0.2s;
 }
 
 .categories a:hover {
     color: #a97724;
 }
 
+/* MENU BUTTON */
+
+.menu-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: #29251d;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* SEARCH AND CART */
+
 .header-actions {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: flex-end;
     gap: 10px;
 }
 
 .icon-btn {
-    width: 40px;
-    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #29251d;
-    background: transparent;
+    width: 40px;
+    height: 40px;
+    padding: 0;
     border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: #29251d;
     cursor: pointer;
+}
+
+.icon-btn:hover {
+    background: #f7f0e3;
 }
 
 .icon-btn svg {
@@ -87,10 +145,15 @@ body {
     stroke-linejoin: round;
 }
 
-/* Search */
+/* =========================
+   SEARCH BAR
+========================= */
+
 .search-panel {
     display: none;
+    width: 100%;
     padding: 15px 4%;
+    background: #ffffff;
     border-bottom: 1px solid #eee5d5;
 }
 
@@ -102,14 +165,18 @@ body {
     display: block;
     width: 100%;
     max-width: 650px;
-    margin: auto;
-    padding: 12px;
+    margin: 0 auto;
+    padding: 12px 14px;
     border: 1px solid #d8c8a8;
     border-radius: 6px;
+    outline-color: #a97724;
 }
 
-/* Smaller laptop */
-@media (max-width: 1100px) and (min-width: 761px) {
+/* =========================
+   SMALL LAPTOPS
+========================= */
+
+@media screen and (max-width: 1100px) and (min-width: 761px) {
     .header {
         gap: 12px;
         padding-left: 2%;
@@ -121,7 +188,7 @@ body {
     }
 
     .categories {
-        gap: 10px;
+        gap: 9px;
     }
 
     .categories a {
@@ -131,26 +198,38 @@ body {
     .header-actions {
         gap: 2px;
     }
+
+    .icon-btn {
+        width: 34px;
+    }
 }
 
-/* Mobile */
-@media (max-width: 760px) {
+/* =========================
+   MOBILE HEADER
+========================= */
+
+@media screen and (max-width: 760px) {
+
     .header {
+        width: 100%;
         min-height: 68px;
         padding: 8px 10px;
+        display: grid;
         grid-template-columns: 40px minmax(0, 1fr) 78px;
-        gap: 4px;
+        align-items: center;
+        column-gap: 4px;
+        row-gap: 0;
     }
+
+    /* Menu left */
 
     .menu-btn {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
         grid-column: 1;
         grid-row: 1;
     }
+
+    /* Logo exact center */
 
     .logo {
         grid-column: 2;
@@ -166,10 +245,15 @@ body {
         object-fit: contain;
     }
 
+    /* Search and cart right */
+
     .header-actions {
         grid-column: 3;
         grid-row: 1;
+        display: flex;
+        flex-direction: row;
         justify-content: flex-end;
+        align-items: center;
         gap: 0;
     }
 
@@ -178,25 +262,89 @@ body {
         height: 40px;
     }
 
-    /* Menu click chesinappudu categories */
+    /* Categories hidden until menu click */
+
     .categories {
         display: none;
         grid-column: 1 / -1;
         grid-row: 2;
+
         width: 100%;
-        justify-content: flex-start;
+        min-width: 0;
+
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        align-items: center;
+
         gap: 22px;
-        padding: 14px 2px 8px;
+        padding: 14px 4px 10px;
+
         overflow-x: auto;
+        overflow-y: hidden;
         white-space: nowrap;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: thin;
     }
 
+    /* Menu open - horizontal row */
+
     .categories.open {
-        display: flex;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        align-items: center;
     }
 
     .categories a {
-        flex-shrink: 0;
+        display: inline-flex !important;
+        flex: 0 0 auto !important;
+        white-space: nowrap;
         font-size: 14px;
+    }
+
+    /* Search on mobile */
+
+    .search-panel {
+        padding: 12px;
+    }
+
+    .search-panel input {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* =========================
+   EXTRA SMALL PHONES
+========================= */
+
+@media screen and (max-width: 360px) {
+
+    .header {
+        grid-template-columns: 34px minmax(0, 1fr) 72px;
+        padding-left: 6px;
+        padding-right: 6px;
+        gap: 3px;
+    }
+
+    .menu-btn {
+        width: 34px;
+    }
+
+    .logo img {
+        max-width: 100%;
+        max-height: 42px;
+    }
+
+    .icon-btn {
+        width: 35px;
+    }
+
+    .categories {
+        gap: 18px;
     }
 }
