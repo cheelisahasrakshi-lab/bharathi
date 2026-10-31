@@ -86,6 +86,7 @@ input {
     font-size: clamp(12px, 0.9vw, 15px);
     color: #29251d;
     transition: color 0.2s;
+    text-decoration: none;
 }
 
 .categories a:hover {
@@ -471,5 +472,257 @@ input {
         width: 30px;
         height: 30px;
         font-size: 14px;
+    }
+}
+
+/* OUR PRODUCTS */
+
+.our-products {
+    width: 100%;
+    padding: 45px 6%;
+    text-align: center;
+    background: #fffdf8;
+}
+
+.our-products h2 {
+    font-size: 32px;
+    color: #68451e;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.product-card {
+    overflow: hidden;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.product-card h3 {
+    font-size: 22px;
+    color: #68451e;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .our-products {
+        padding: 30px 15px;
+    }
+
+    .our-products h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .product-card img {
+        height: 160px;
+    }
+
+
+    .product-card h3 {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+}
+
+/* EVERYDAY GOODNESS */
+
+.everyday-goodness {
+    width: 100%;
+    padding: 65px 6%;
+    background: #f8f3e9;
+}
+
+.goodness-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.goodness-heading span {
+    color: #a47b3c;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+.goodness-heading h2 {
+    color: #56391f;
+    font-size: 34px;
+    margin: 12px 0;
+}
+
+.goodness-heading p {
+    color: #776958;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.goodness-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.goodness-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.goodness-card:hover {
+    transform: translateY(-6px);
+}
+
+.goodness-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.goodness-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.goodness-info h3 {
+    color: #68451e;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.goodness-info p {
+    color: #776958;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .goodness-container {
+        gap: 15px;
+    }
+
+    .goodness-card img {
+        height: 210px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .everyday-goodness {
+        padding: 40px 15px;
+    }
+
+    .goodness-heading h2 {
+        font-size: 27px;
+    }
+
+    .goodness-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .goodness-card img {
+        height: 230px;
+    }
+}
+
+/* FOOTER */
+
+.main-footer {
+    background: #4b321c;
+    color: #fff;
+    text-align: center;
+    padding: 40px 15px 15px;
+    width: 100%;
+}
+
+.footer-content h2 {
+    font-size: 26px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.footer-links a:hover {
+    color: #e6c58c;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 15px;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    margin: 0;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+    .main-footer {
+        padding: 30px 12px 15px;
+    }
+
+    .footer-content h2 {
+        font-size: 22px;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+
+    .footer-links a {
+        font-size: 13px;
     }
 }
