@@ -351,3 +351,131 @@ input {
         gap: 18px;
     }
 }
+
+
+/* Main Carousel */
+.carousel-overlay {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 15px;
+}
+
+/* Image container */
+.carousel-overlay .carousel-inner {
+    width: 100%;
+    height: clamp(220px, 42vw, 520px);
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+/* Images perfectly centered */
+.carousel-overlay .carousel-item {
+    height: 100%;
+    text-align: center;
+}
+
+.carousel-overlay .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position:center 40%;
+    /* display: block; */
+}
+
+/* Controls over image */
+.carousel-overlay-controls {
+    position: absolute;
+    left: 35px;
+    right: 35px;
+    bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.carousel-overlay-controls button {
+    pointer-events: auto;
+}
+
+/* Previous and Next buttons */
+.carousel-control-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.85);
+    color: #222;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-control-btn:hover {
+    background: white;
+}
+
+/* Indicators */
+.carousel-overlay .carousel-indicators {
+    position: static;
+    margin: 0;
+    display: flex;
+    gap: 8px;
+}
+
+.carousel-overlay .carousel-indicators button {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 0;
+    margin: 0;
+    background-color: white;
+    opacity: 0.6;
+}
+
+.carousel-overlay .carousel-indicators button.active {
+    opacity: 1;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .carousel-overlay .carousel-inner {
+        height: 300px;
+        border-radius: 18px;
+    }
+
+    .carousel-overlay-controls {
+        left: 25px;
+        right: 25px;
+        bottom: 18px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .carousel-overlay {
+        padding: 0 10px;
+    }
+
+    .carousel-overlay .carousel-inner {
+        height: 210px;
+        border-radius: 14px;
+    }
+
+    .carousel-overlay-controls {
+        left: 18px;
+        right: 18px;
+        bottom: 12px;
+    }
+
+    .carousel-control-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+}
